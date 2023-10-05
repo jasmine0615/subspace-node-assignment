@@ -14,7 +14,7 @@ if (!uri || !sc) {
 const cache = {};
 app.get("/", (req, res) => {
   try {
-    console.log("helloo. use URL/api/blog-stats to get the required display of data and URL/api/blog-search?query=programming U may replace programming with your choice of word. Thanks!! The url is the site of the  page, for eg : https://assign-subspace.onrender.com");
+    res.json("helloo. use URL/api/blog-stats to get the required display of data and URL/api/blog-search?query=programming U may replace programming with your choice of word. Thanks!! The url is the site of the  page, for eg : https://assign-subspace.onrender.com");
   } catch (error) {
     console.error("An error occurred:", error.message);
     res.status(500).json({
