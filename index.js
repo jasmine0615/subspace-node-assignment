@@ -12,6 +12,16 @@ if (!uri || !sc) {
   process.exit(1);
 }
 const cache = {};
+app.get("/", (req, res) => {
+  try {
+    res.json({ message: "hello" });
+  } catch (error) {
+    console.error("An error occurred:", error.message);
+    res.status(500).json({
+      error: "An error occurred while processing the request.",
+    });
+  }
+});
 app.get("/api/blog-stats", async (req, res) => {
   try {
     const responseData = await fetchBlogData();
